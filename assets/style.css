@@ -73,6 +73,15 @@ textarea{
   transition: all .3s ease-in-out;
 }
 
+#clearBtn {
+  height: 40px;
+  background-color: coral;
+  border-radius: 10px;
+}
+
+#clearBtn:hover {
+  background-color: brown;
+}
 
 
 

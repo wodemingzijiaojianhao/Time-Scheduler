@@ -1,6 +1,7 @@
 var today = moment();
 var currentDayEl = $('#currentDay');
 var timeBlockContainer = $('.container');
+var clearBtnEl = $('#clearBtn');
 var time;
 var formEl;
 var labelEl;
@@ -43,7 +44,7 @@ var storedData = JSON.parse(localStorage.getItem("dataSchedule"));
 if (storedData == null) {
     storedData = [];
     for (var i = 0; i <= 23; i++) {
-        storedData.push("-");
+        storedData.push(" ");
     }
     localStorage.setItem("dataSchedule", JSON.stringify(storedData));
 }
@@ -63,6 +64,15 @@ function renderEvents() {
     }
 }
 
+function clearEvents() {
+    for (var i = 0; i <= 23; i++) {
+        timeBlockContainer.children().eq(i).children('input').attr('value', ' ');
+        storedData[i] = ' ';
+    }
+    localStorage.setItem('dataSchedule', JSON.stringify(storedData));
+    location.reload();
+}
+
 function renderCurrentTime() {
     time = parseInt(moment().format('H'));
     console.log(time);
@@ -80,6 +90,12 @@ $('.saveBtn').on("click", function(event){
     storeEvents();
     renderEvents();
 })
+
+clearBtnEl.on("click", function(event){
+    event.preventDefault();
+    clearEvents();
+})
+
 renderEvents();
 renderCurrentTime();
 setInterval(renderCurrentTime, 60000);

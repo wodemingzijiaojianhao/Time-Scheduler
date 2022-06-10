@@ -4,4 +4,7 @@ Hi, there! This is an application that can help you to schedule your work more e
 This package of code contains a html, a css, a javascript file as usual, as well as an readme file and .gitignore file. The css and javascript file are stored in the 'assets' folder, adn the rest of files are store in the root folder.
 ## Screenshot
 
+![Screenshot describe the header of the webpage](./assets/Screenshot1.png)
+![Screenshot describe the body of the webpage](./assets/Screenshot2.png)
+
 ## Link to Deployed Application
